@@ -12,6 +12,9 @@ It is based on the following repo: https://github.com/sprintcube/docker-compose-
 Extra PHP and MySQL versions have been removed along with redis, and the project structure has been simplified.
 
 ## Installation
+Make sure you have docker installed first. Download the latest docker desktop install here: https://www.docker.com/products/docker-desktop/.
+
+Note that you do NOT have to create a docker account to download docker desktop or to use this project.
 
 - Clone this repository on your local computer (or just download a zip archive)
 - Rename cs404.env to .env (this file contains environment variables for docker-compose)
