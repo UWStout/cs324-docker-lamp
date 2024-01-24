@@ -3,6 +3,7 @@
 /config/*
 /data/*
 /logs/*
-/www/**
+!/data/.gitkeep
+!/logs/.gitkeep
 .DS_Store
 /buildtest
