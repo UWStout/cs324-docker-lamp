@@ -1,6 +1,6 @@
 FROM php:8.2.1-apache-buster
 
-# Surpresses debconf complaints of trying to install apt packages interactively
+# Suppresses debconf complaints of trying to install apt packages interactively
 # https://github.com/moby/moby/issues/4032#issuecomment-192327844
  
 ARG DEBIAN_FRONTEND=noninteractive
@@ -94,6 +94,10 @@ RUN a2enmod ssl && a2enmod rewrite
 
 # Enable apache modules
 RUN a2enmod rewrite headers
+
+# Install PHP Code Sniffer
+RUN composer global require "squizlabs/php_codesniffer=*" && \
+    ln -s ~/.composer/vendor/bin/phpcs /usr/local/bin/phpcs
 
 # Cleanup
 RUN rm -rf /usr/src/*
