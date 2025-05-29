@@ -40,12 +40,10 @@ services:
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
   phpmyadmin:
     image: phpmyadmin
     container_name: "${COMPOSE_PROJECT_NAME}-phpmyadmin"
+    restart: "always"
     links:
       - database
     environment:
@@ -54,8 +52,6 @@ services:
       PMA_USER: root
       PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       UPLOAD_LIMIT: ${UPLOAD_LIMIT}
       MEMORY_LIMIT: ${MEMORY_LIMIT}
     ports:

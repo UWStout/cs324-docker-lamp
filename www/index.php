@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LAMP STACK</title>
+        <title>CS 324 Local LAMP Server</title>
         <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg+xml">
         <link rel="stylesheet" href="/assets/css/bulma.min.css">
     </head>
@@ -12,10 +12,11 @@
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <h1 class="title">
-                        LAMP STACK
+                        CS 324 Local LAMP / MySQL Server
                     </h1>
                     <h2 class="subtitle">
-                        Your local development environment
+                        A local Linux, Apache, MySQL, and PHP development<br />
+                        environment running in a Docker container.
                     </h2>
                 </div>
             </div>
@@ -67,10 +68,12 @@
         <footer class="footer">
             <div class="content has-text-centered">
                 <p>
-                    <strong><a href="https://www.sprintcube.com" target="_blank">SprintCube</a></strong><br>
-                    The source code is released under the
+                    <strong><a href="https://github.com/UWStout/cs324-docker-lamp" target="_blank">View Container Repository on github</a></strong><br>
+                    This project is heavily based on the
                     <a href="https://github.com/sprintcube/docker-compose-lamp/blob/master/LICENSE" target="_blank">
-                        MIT license</a>.
+                        sprintcube docker compose lamp
+                    </a>
+                    container.
                 </p>
             </div>
         </footer>
