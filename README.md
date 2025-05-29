@@ -27,9 +27,14 @@ To use this LAMP container, follow these steps:
 - Clone this repository on your local computer (or just download a zip archive)
 - Rename cs404.env to .env (this file contains environment variables for docker-compose)
 - Run `docker-compose up -d` from the root of the project
+  - Wait while it build the container layers (patience young grasshopper)
 - Visit `http://localhost:3000` in your browser
 
-You can edit the files in `www` to see changes reflected in the browser. PHP 8.2 is supported.
+You can edit the files in the `www` folder to see changes reflected in the browser. PHP 8.2 is supported.
+
+You also now have a database running on port __3307__ (one MORE than the default MySQL port). Try connecting to it from the mysql CLI, MySQL Workbench, DBeaver, or a similar client. The default root credentials are:
+- Username: root
+- Password: databaseSU25
 
 ## Setup Docker to use WSL (Windows only)
 You must tell docker to use WSL in its settings:
@@ -38,6 +43,6 @@ You must tell docker to use WSL in its settings:
 - Select `Apply & Restart`
 
 ## Credit
-This is a copy of the sprintcube docker-compose-lamp repo, with some modifications to suit the needs of our class. Extra PHP and MySQL versions have been removed along with redis, and the project structure has been simplified.
+This is a copy of the sprintcube docker-compose-lamp repo, with some modifications to suit the needs of our class. Extra PHP and MySQL versions have been removed along with redis, and the project structure has been simplified. Many unneeded packages have also been removed from the install script for the PHP layer.
 
 For more information, visit the original repo: https://github.com/sprintcube/docker-compose-lamp
