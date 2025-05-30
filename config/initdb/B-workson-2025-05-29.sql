@@ -17,6 +17,13 @@
 /*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
 
 --
+-- Create the database called 'workson' if it doesn't exist
+-- Make it the current database
+--
+CREATE DATABASE IF NOT EXISTS `workson`;
+USE `workson`;
+
+--
 -- Table structure for table `department`
 --
 

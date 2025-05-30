@@ -17,6 +17,13 @@
 /*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
 
 --
+-- Create the database called 'mondial' if it doesn't exist
+-- Make it the current database
+--
+CREATE DATABASE IF NOT EXISTS `mondial`;
+USE `mondial`;
+
+--
 -- Table structure for table `borders`
 --
 

@@ -33,18 +33,13 @@
                                 <li>PHP <?= phpversion(); ?></li>
                                 <li>
                                     <?php
-                                    $link = mysqli_connect("database", "root", $_ENV['MYSQL_ROOT_PASSWORD'], null);
-
-                                    /* check connection */
-                                    if (mysqli_connect_errno()) {
-                                        printf("MySQL connection failed: %s", mysqli_connect_error());
-                                    } else {
-                                        /* print server version */
+                                    try {
+                                        $link = mysqli_connect("database", "root", $_ENV['MYSQL_ROOT_PASSWORD'], null);
                                         printf("MySQL Server %s", mysqli_get_server_info($link));
+                                        mysqli_close($link);
+                                    } catch (Exception $e) {
+                                        printf("MySQL connection failed: %s", $e->getMessage());
                                     }
-
-                                    /* close connection */
-                                    mysqli_close($link);
                                     ?>
                                 </li>
                             </ul>
