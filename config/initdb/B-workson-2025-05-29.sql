@@ -84,8 +84,8 @@ CREATE TABLE `workson` (
   `hours` int DEFAULT NULL,
   PRIMARY KEY (`employeeid`,`projectid`),
   KEY `worksproject_idx` (`projectid`),
-  CONSTRAINT `worksemployee` FOREIGN KEY (`employeeid`) REFERENCES `employee` (`id`),
-  CONSTRAINT `worksproject` FOREIGN KEY (`projectid`) REFERENCES `project` (`id`)
+  CONSTRAINT `worksemployee` FOREIGN KEY (`employeeid`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `worksproject` FOREIGN KEY (`projectid`) REFERENCES `project` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -3095,7 +3095,7 @@ CREATE TABLE `employee` (
   `supervisor` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `EmployeeDept_idx` (`department`),
-  CONSTRAINT `EmployeeDept` FOREIGN KEY (`department`) REFERENCES `department` (`id`)
+  CONSTRAINT `EmployeeDept` FOREIGN KEY (`department`) REFERENCES `department` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -4123,7 +4123,7 @@ CREATE TABLE `project` (
   `department` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `ProjectToDepartment_idx` (`department`),
-  CONSTRAINT `ProjectToDepartment` FOREIGN KEY (`department`) REFERENCES `department` (`id`)
+  CONSTRAINT `ProjectToDepartment` FOREIGN KEY (`department`) REFERENCES `department` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
